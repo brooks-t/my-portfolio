@@ -30,6 +30,16 @@ $background-opacity: 0.9;
     }
 }
 
+// Set Text Color
+// set-text-color($color) returns #000 if lightness is greater than 40, otherwise returns #fff
+@function set-text-color($color) {
+    @if (lightness($color) > 40) {
+        @return #000;
+    } @else {
+        @return #fff;
+    }
+}
+
 // Media query mixins
 @mixin mediaSmall {
     @media screen and (max-width: 500px) {
